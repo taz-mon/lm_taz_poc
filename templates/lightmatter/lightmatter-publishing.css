@@ -1,0 +1,695 @@
+/*
+ * Lightmatter Publishing Stylesheet
+ * Oxygen XML Editor — WebHelp and PDF (DCPP) outputs
+ *
+ * Brand reference:
+ *   Primary red:   #FE2D2D  (Lightmatter brand red)
+ *   Black:         #0A0A0A  (near-black for body text)
+ *   White:         #FFFFFF
+ *   Light gray:    #F4F4F4  (page backgrounds, table stripes)
+ *   Mid gray:      #6B6B6B  (secondary text, captions)
+ *   Border gray:   #DDDDDD  (table borders, dividers)
+ *
+ * Typography:
+ *   Display/headings: "Inference Sans", sans-serif
+ *   Body/UI:          "Object Sans", "Inter", sans-serif
+ *   Code/monospace:   "JetBrains Mono", "Fira Code", monospace
+ *
+ * NOTE: Inference Sans is a custom Lightmatter font.
+ * Replace the @font-face src paths below with your
+ * actual font file locations before building.
+ *
+ * DCPP note: This file drives both WebHelp (HTML) and
+ * PDF output when used with the DITA-OT DCPP plugin.
+ * One CSS commit updates both outputs simultaneously.
+ * For legacy PDF2/XSL-FO pipelines, a separate
+ * xsl/fo customization layer is required instead.
+ */
+
+
+/* ============================================================
+   FONT DECLARATIONS
+   Replace src paths with actual Lightmatter font assets.
+   ============================================================ */
+
+@font-face {
+    font-family: "Inference Sans";
+    src: url("fonts/InferenceSans-Regular.woff2") format("woff2"),
+         url("fonts/InferenceSans-Regular.woff")  format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Inference Sans";
+    src: url("fonts/InferenceSans-Bold.woff2") format("woff2"),
+         url("fonts/InferenceSans-Bold.woff")  format("woff");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Object Sans";
+    src: url("fonts/ObjectSans-Regular.woff2") format("woff2"),
+         url("fonts/ObjectSans-Regular.woff")  format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Object Sans";
+    src: url("fonts/ObjectSans-Bold.woff2") format("woff2"),
+         url("fonts/ObjectSans-Bold.woff")  format("woff");
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+/* ============================================================
+   CSS CUSTOM PROPERTIES (design tokens)
+   Update these to adjust brand values globally.
+   ============================================================ */
+
+:root {
+    /* Brand colors */
+    --lm-red:           #FE2D2D;
+    --lm-red-dark:      #CC1A1A;   /* hover states, active links */
+    --lm-black:         #0A0A0A;
+    --lm-white:         #FFFFFF;
+    --lm-gray-light:    #F4F4F4;
+    --lm-gray-mid:      #6B6B6B;
+    --lm-gray-border:   #DDDDDD;
+
+    /* Typography */
+    --font-display:     "Inference Sans", "Inter", sans-serif;
+    --font-body:        "Object Sans", "Inter", sans-serif;
+    --font-mono:        "JetBrains Mono", "Fira Code", "Courier New", monospace;
+
+    /* Font sizes */
+    --size-base:        16px;
+    --size-sm:          14px;
+    --size-xs:          12px;
+    --size-h1:          2rem;
+    --size-h2:          1.6rem;
+    --size-h3:          1.3rem;
+    --size-h4:          1.1rem;
+
+    /* Spacing */
+    --space-xs:         0.25rem;
+    --space-sm:         0.5rem;
+    --space-md:         1rem;
+    --space-lg:         1.5rem;
+    --space-xl:         2rem;
+
+    /* Layout */
+    --content-max-width: 900px;
+    --sidebar-width:     260px;
+}
+
+
+/* ============================================================
+   GLOBAL RESET AND BASE
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body,
+.wh-page-body {
+    font-family:      var(--font-body);
+    font-size:        var(--size-base);
+    line-height:      1.65;
+    color:            var(--lm-black);
+    background-color: var(--lm-white);
+    margin:           0;
+    padding:          0;
+}
+
+
+/* ============================================================
+   HEADINGS
+   Uses Inference Sans per Lightmatter brand guidelines.
+   ============================================================ */
+
+h1, h2, h3, h4, h5, h6,
+.topictitle1,
+.topictitle2,
+.topictitle3,
+.topictitle4 {
+    font-family:    var(--font-display);
+    font-weight:    700;
+    line-height:    1.2;
+    margin-top:     var(--space-xl);
+    margin-bottom:  var(--space-sm);
+    color:          var(--lm-black);
+}
+
+h1, .topictitle1 {
+    font-size:      var(--size-h1);
+    border-bottom:  3px solid var(--lm-red);
+    padding-bottom: var(--space-sm);
+    margin-top:     0;
+}
+
+h2, .topictitle2 {
+    font-size:      var(--size-h2);
+    border-left:    4px solid var(--lm-red);
+    padding-left:   var(--space-sm);
+}
+
+h3, .topictitle3 {
+    font-size:      var(--size-h3);
+    color:          var(--lm-red);
+}
+
+h4, .topictitle4 {
+    font-size:      var(--size-h4);
+    color:          var(--lm-gray-mid);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+
+/* ============================================================
+   BODY TEXT AND PARAGRAPHS
+   ============================================================ */
+
+p,
+.shortdesc,
+.body {
+    font-size:     var(--size-base);
+    margin-top:    0;
+    margin-bottom: var(--space-md);
+    max-width:     var(--content-max-width);
+}
+
+.shortdesc {
+    font-size:   1.05rem;
+    color:       var(--lm-gray-mid);
+    font-style:  italic;
+    margin-bottom: var(--space-lg);
+}
+
+
+/* ============================================================
+   LINKS
+   ============================================================ */
+
+a,
+.xref {
+    color:           var(--lm-red);
+    text-decoration: none;
+    border-bottom:   1px solid transparent;
+    transition:      border-color 0.15s ease;
+}
+
+a:hover,
+.xref:hover {
+    color:        var(--lm-red-dark);
+    border-bottom-color: var(--lm-red-dark);
+}
+
+a:visited {
+    color: var(--lm-red-dark);
+}
+
+
+/* ============================================================
+   LISTS
+   ============================================================ */
+
+ul, ol,
+.ul, .ol {
+    padding-left:  var(--space-lg);
+    margin-bottom: var(--space-md);
+}
+
+li,
+.li {
+    margin-bottom: var(--space-xs);
+    line-height:   1.65;
+}
+
+/* DITA unordered list marker — Lightmatter red square */
+ul li::marker,
+.ul .li::marker {
+    color: var(--lm-red);
+}
+
+
+/* ============================================================
+   NOTES AND ADMONITIONS
+   Maps to DITA note/@type values:
+   note, tip, important, warning, caution, danger
+   ============================================================ */
+
+.note,
+.tip,
+.important,
+.warning,
+.caution,
+.danger {
+    border-left:   4px solid var(--lm-gray-border);
+    background:    var(--lm-gray-light);
+    padding:       var(--space-sm) var(--space-md);
+    margin:        var(--space-md) 0;
+    border-radius: 0 4px 4px 0;
+    font-size:     var(--size-sm);
+}
+
+.note        { border-left-color: #4A90D9; }   /* blue   */
+.tip         { border-left-color: #2ECC71; }   /* green  */
+.important   { border-left-color: var(--lm-red); }
+.warning     { border-left-color: #F39C12; }   /* amber  */
+.caution     { border-left-color: #E67E22; }   /* orange */
+.danger      { border-left-color: #C0392B;
+               background: #FFF5F5; }           /* deep red */
+
+.note .notehead,
+.tip .notehead,
+.important .notehead,
+.warning .notehead,
+.caution .notehead,
+.danger .notehead {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size:   var(--size-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-xs);
+}
+
+
+/* ============================================================
+   CODE AND PREFORMATTED TEXT
+   ============================================================ */
+
+code,
+tt,
+.codeph,
+.apiname,
+.option,
+.parmname {
+    font-family:      var(--font-mono);
+    font-size:        0.88em;
+    background-color: var(--lm-gray-light);
+    color:            var(--lm-black);
+    padding:          0.1em 0.35em;
+    border-radius:    3px;
+    border:           1px solid var(--lm-gray-border);
+}
+
+pre,
+.codeblock,
+.screen {
+    font-family:      var(--font-mono);
+    font-size:        var(--size-sm);
+    background-color: #1A1A1A;   /* dark background for code blocks */
+    color:            #F8F8F2;
+    padding:          var(--space-md);
+    border-radius:    4px;
+    border-left:      3px solid var(--lm-red);
+    overflow-x:       auto;
+    line-height:      1.5;
+    margin:           var(--space-md) 0;
+    white-space:      pre;
+}
+
+
+/* ============================================================
+   TABLES
+   ============================================================ */
+
+table,
+.simpletable,
+.choicetable {
+    width:           100%;
+    border-collapse: collapse;
+    margin:          var(--space-md) 0;
+    font-size:       var(--size-sm);
+}
+
+th,
+.sthead .stentry,
+.chhead .choptionhd,
+.chhead .chdeschd {
+    font-family:      var(--font-display);
+    font-weight:      700;
+    background-color: var(--lm-red);
+    color:            var(--lm-white);
+    padding:          var(--space-sm) var(--space-md);
+    text-align:       left;
+    border:           1px solid var(--lm-red-dark);
+}
+
+td,
+.strow .stentry,
+.chrow .choption,
+.chrow .chdesc {
+    padding:    var(--space-sm) var(--space-md);
+    border:     1px solid var(--lm-gray-border);
+    vertical-align: top;
+}
+
+/* Zebra striping */
+tr:nth-child(even) td,
+.strow:nth-child(even) .stentry {
+    background-color: var(--lm-gray-light);
+}
+
+tr:hover td,
+.strow:hover .stentry {
+    background-color: #FFF0F0;   /* very light red tint on hover */
+}
+
+
+/* ============================================================
+   FIGURES AND IMAGES
+   ============================================================ */
+
+figure,
+.fig {
+    margin:    var(--space-md) 0;
+    text-align: center;
+}
+
+figure img,
+.fig img,
+.image {
+    max-width:    100%;
+    height:       auto;
+    border:       1px solid var(--lm-gray-border);
+    border-radius: 4px;
+}
+
+figcaption,
+.fig .figcap {
+    font-size:   var(--size-xs);
+    color:       var(--lm-gray-mid);
+    margin-top:  var(--space-xs);
+    font-style:  italic;
+    text-align:  center;
+}
+
+
+/* ============================================================
+   WEBHELP NAVIGATION AND SIDEBAR
+   Targets Oxygen WebHelp Responsive output structure.
+   ============================================================ */
+
+.wh-sidebar,
+#wh-sidebar {
+    width:            var(--sidebar-width);
+    background-color: var(--lm-black);
+    color:            var(--lm-white);
+    padding:          var(--space-md) 0;
+}
+
+.wh-sidebar a,
+#wh-sidebar a {
+    color:            #FFAAAA;   /* light red for dark background */
+    border-bottom:    none;
+}
+
+.wh-sidebar a:hover {
+    color:            var(--lm-white);
+}
+
+/* Active/selected topic in sidebar */
+.wh-sidebar .selected,
+.wh-sidebar .active {
+    background-color: var(--lm-red);
+    color:            var(--lm-white);
+    border-left:      3px solid var(--lm-white);
+    padding-left:     calc(var(--space-sm) - 3px);
+}
+
+/* Sidebar topic title */
+.wh-sidebar .topicref-title {
+    font-family: var(--font-body);
+    font-size:   var(--size-sm);
+    padding:     var(--space-xs) var(--space-md);
+    display:     block;
+}
+
+
+/* ============================================================
+   WEBHELP HEADER / NAVBAR
+   ============================================================ */
+
+.wh-header,
+#wh-header {
+    background-color: var(--lm-black);
+    color:            var(--lm-white);
+    padding:          var(--space-sm) var(--space-xl);
+    display:          flex;
+    align-items:      center;
+    justify-content:  space-between;
+    border-bottom:    3px solid var(--lm-red);
+}
+
+.wh-header .wh-logo img {
+    height: 36px;
+}
+
+.wh-header .wh-product-title {
+    font-family: var(--font-display);
+    font-size:   1.1rem;
+    font-weight: 700;
+    color:       var(--lm-white);
+}
+
+
+/* ============================================================
+   WEBHELP SEARCH
+   ============================================================ */
+
+.wh-search-input,
+#searchField {
+    border:        2px solid var(--lm-gray-border);
+    border-radius: 4px;
+    padding:       var(--space-xs) var(--space-sm);
+    font-family:   var(--font-body);
+    font-size:     var(--size-sm);
+    outline:       none;
+    transition:    border-color 0.15s ease;
+}
+
+.wh-search-input:focus,
+#searchField:focus {
+    border-color: var(--lm-red);
+}
+
+
+/* ============================================================
+   BREADCRUMBS
+   ============================================================ */
+
+.wh-breadcrumb,
+.breadcrumb {
+    font-size:     var(--size-xs);
+    color:         var(--lm-gray-mid);
+    padding:       var(--space-sm) 0;
+    margin-bottom: var(--space-md);
+}
+
+.wh-breadcrumb a,
+.breadcrumb a {
+    color:      var(--lm-gray-mid);
+    border:     none;
+}
+
+.wh-breadcrumb a:hover {
+    color: var(--lm-red);
+}
+
+.wh-breadcrumb .separator {
+    margin:     0 var(--space-xs);
+    color:      var(--lm-red);
+}
+
+
+/* ============================================================
+   STEP-BASED CONTENT (tasks)
+   ============================================================ */
+
+.steps .step,
+ol.steps > li {
+    margin-bottom: var(--space-md);
+    padding-left:  var(--space-sm);
+}
+
+.steps .cmd,
+.step .cmd {
+    font-weight: 700;
+    color:       var(--lm-black);
+}
+
+.steps .stepresult,
+.step .stepresult {
+    font-style: italic;
+    color:      var(--lm-gray-mid);
+    margin-top: var(--space-xs);
+}
+
+.substeps {
+    margin-top:  var(--space-sm);
+    padding-left: var(--space-lg);
+}
+
+
+/* ============================================================
+   PDF (DCPP) OUTPUT
+   These rules apply when DITA-OT DCPP generates PDF via CSS.
+   They are ignored in WebHelp output.
+   ============================================================ */
+
+@media print {
+
+    /* Page setup */
+    @page {
+        size:   Letter;
+        margin: 1in 0.9in 1in 0.9in;
+
+        @top-left {
+            content:     "Lightmatter Confidential";
+            font-family: var(--font-body);
+            font-size:   9pt;
+            color:       var(--lm-gray-mid);
+        }
+
+        @top-right {
+            content:     string(chapter-title);
+            font-family: var(--font-body);
+            font-size:   9pt;
+            color:       var(--lm-gray-mid);
+        }
+
+        @bottom-center {
+            content:     counter(page);
+            font-family: var(--font-body);
+            font-size:   9pt;
+            color:       var(--lm-gray-mid);
+        }
+    }
+
+    /* Cover page — first page of output */
+    @page :first {
+        @top-left    { content: none; }
+        @top-right   { content: none; }
+        @bottom-center { content: none; }
+        background-color: var(--lm-black);
+    }
+
+    /* Prevent page breaks inside tables and code blocks */
+    table,
+    .simpletable,
+    pre,
+    .codeblock {
+        page-break-inside: avoid;
+    }
+
+    /* Force page break before each top-level topic */
+    .topic {
+        page-break-before: always;
+    }
+
+    /* Suppress sidebar and nav chrome in PDF */
+    .wh-sidebar,
+    .wh-header,
+    .wh-breadcrumb,
+    .wh-search-input {
+        display: none;
+    }
+
+    /* Heading color adjustments for print */
+    h1, .topictitle1 {
+        color:        var(--lm-black);
+        border-bottom: 2pt solid var(--lm-red);
+    }
+
+    h2, .topictitle2 {
+        border-left:  4pt solid var(--lm-red);
+        padding-left: 6pt;
+    }
+
+    /* Links: show URL after link text in PDF */
+    a[href]::after {
+        content:   " (" attr(href) ")";
+        font-size: 0.8em;
+        color:     var(--lm-gray-mid);
+    }
+
+    /* Suppress URL display for internal xrefs */
+    a.xref[href^="#"]::after {
+        content: none;
+    }
+
+    /* Code blocks in PDF: lighter background for print */
+    pre,
+    .codeblock,
+    .screen {
+        background-color: var(--lm-gray-light);
+        color:            var(--lm-black);
+        border:           1pt solid var(--lm-gray-border);
+        border-left:      3pt solid var(--lm-red);
+        font-size:        9pt;
+    }
+
+    /* Table headers in PDF */
+    th,
+    .sthead .stentry {
+        background-color: var(--lm-red);
+        color:            var(--lm-white);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    /* Ensure zebra stripe prints */
+    tr:nth-child(even) td {
+        background-color: var(--lm-gray-light);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
+
+
+/* ============================================================
+   RESPONSIVE (WebHelp mobile)
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    :root {
+        --size-base: 15px;
+        --size-h1:   1.6rem;
+        --size-h2:   1.35rem;
+        --size-h3:   1.15rem;
+    }
+
+    .wh-sidebar,
+    #wh-sidebar {
+        width:    100%;
+        position: relative;
+    }
+
+    .wh-header {
+        flex-direction: column;
+        align-items:    flex-start;
+        gap:            var(--space-sm);
+    }
+
+    pre,
+    .codeblock {
+        font-size: var(--size-xs);
+    }
+
+    table,
+    .simpletable {
+        display:    block;
+        overflow-x: auto;
+    }
+}

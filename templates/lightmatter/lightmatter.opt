@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publishing-template>
+  <name>Lightmatter</name>
+  <pdf>
+    <tags>
+      <tag>Lightmatter brand</tag>
+    </tags>
+    <resources>
+      <css file="lightmatter-publishing.css"/>
+    </resources>
+    <parameters>
+      <parameter name="figure.title.placement" value="bottom"/>
+    </parameters>
+  </pdf>
+</publishing-template>
