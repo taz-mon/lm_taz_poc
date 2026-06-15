@@ -30,7 +30,9 @@
      chapter:first:left, chapter:first:right {
 
   @bottom-left {
-    content: "Passage L20 \A " oxy_xpath("format-date(current-date(), '[MNn] [Y]')");
+    content: oxy_xpath('//*[contains(@class, "bookmap/mainbooktitle")]/text()')
+             "\A "
+             oxy_xpath("format-date(current-date(), '[MNn] [Y]')");
     white-space: pre;
     color: #FE2D2D;
     vertical-align: top;
@@ -260,6 +262,29 @@ body {
   page-break-inside: avoid;
 }
 
+*[class ~= "topic/title"] {
+  break-after: avoid;
+}
+
+*[class ~= "topic/section"] > *[class ~= "topic/title"] {
+  break-after: avoid;
+}
+
+/* Keep sections together — prevent heading stranding at page bottom */
+*[class ~= "topic/section"] {
+  break-inside: avoid;
+}
+
+*[class ~= "topic/sectiondiv"] {
+  break-inside: avoid;
+}
+
+/* Widow/orphan control */
+:root {
+  widows: 3;
+  orphans: 3;
+}
+
 /* ============================================================
    SUPPRESS BOOKMETA FROM BODY
    ============================================================ */
@@ -279,4 +304,41 @@ body {
 
 *[class ~= "toc/toc"] *[class ~= "toc/tocentry"]::before {
   content: none !important;
+}
+
+/* ============================================================
+   SPECIFICATIONS — THREE-COLUMN LAYOUT
+   Uses outputclass on topic root + @page rule per Oxygen docs
+   ============================================================ */
+
+*[class ~= "topic/topic"][outputclass ~= "three_columns"] {
+  page: three_column_page !important;
+}
+
+@page three_column_page {
+  column-count: 3;
+  column-gap: 0.25in;
+}
+
+/* Topic title spans all three columns */
+*[outputclass ~= "three_columns"] > *[class ~= "topic/title"] {
+  column-span: all;
+}
+
+/* Shortdesc spans all three columns */
+*[outputclass ~= "three_columns"] > *[class ~= "topic/shortdesc"] {
+  column-span: all;
+}
+
+/* Tighten list indenting inside three-column layout */
+*[outputclass ~= "three_columns"] *[class ~= "topic/ul"] {
+  padding-left: 0.125in;
+  margin-top: 2pt;
+  margin-bottom: 2pt;
+}
+
+*[outputclass ~= "three_columns"] *[class ~= "topic/li"] {
+  font-size: 9pt;
+  line-height: 1.3;
+  margin-bottom: 2pt;
 }

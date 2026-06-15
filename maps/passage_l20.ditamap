@@ -6,7 +6,7 @@
        BOOK METADATA (drives cover page via DCPP)
        ============================================================ -->
   <booktitle>
-    <mainbooktitle>Passage L20</mainbooktitle>
+    <mainbooktitle>Passage L20 Technical Notes</mainbooktitle>
     <booktitlealt>Scalable BiDi Optical Interconnect</booktitlealt>
   </booktitle>
 
@@ -24,7 +24,9 @@
   <!-- ============================================================
        FRONT MATTER
        ============================================================ -->
+  
   <frontmatter>
+    <mapref href="../common/global_variables.ditamap" format="ditamap" processing-role="resource-only"/>
   </frontmatter>
 
   <!-- ============================================================

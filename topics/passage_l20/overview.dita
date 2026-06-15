@@ -2,10 +2,10 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="passage-l20-overview">
     
-    <title>Passage L20</title>
-    <shortdesc>The Passage L20 is the industry's first bidirectional-enabled
-        high-density near-package and on-board optics solution, delivering 6.4 Tbps
-        of optical bandwidth per direction for next-generation AI infrastructure.</shortdesc>
+    <title><keyword keyref="lm-passage-l20"/></title>
+    <shortdesc>The <keyword keyref="lm-passage-l20-tm"/> is the industry's first bidirectional-enabled
+        high-density near-package and on-board optics solution, delivering 6.4 Tbps of optical
+        bandwidth per direction for next-generation AI infrastructure.</shortdesc>
     
     <conbody>
         <p>Switch and XPU bandwidths are scaling faster than electrical signaling
@@ -15,14 +15,14 @@
             they are bottlenecked at the panel, consume excessive power, and
             introduce retimer latency that degrades system performance.</p>
         
-        <p>The Passage L20 addresses this directly. Powered by Lightmatter's
-            Passage photonic engine, the L20 brings near-package optics (NPO) and
+        <p>The <keyword keyref="lm-passage-l20"/> addresses this directly. Powered by Lightmatter's
+            <keyword keyref="lm-passage"/> photonic engine, the <keyword keyref="lm-passage-l20"/> brings near-package optics (NPO) and
             on-board optics (OBO) to production-ready form factors, placing optical
             modules in close proximity to the host ASIC. The result is shorter
             electrical trace lengths, lower power consumption, and optical bandwidth
             that scales with deployment needs.</p>
         
-        <p>The L20 is the first solution in its class to support bidirectional
+        <p>The <keyword keyref="lm-passage-l20"/> is the first solution in its class to support bidirectional
             (BiDi) optical links — transmitting and receiving on a single fiber per
             lane. This halves fiber count requirements while maintaining full
             6.4 Tbps per-direction bandwidth, making it the highest-density

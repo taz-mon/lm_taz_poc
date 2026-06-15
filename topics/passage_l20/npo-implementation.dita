@@ -3,12 +3,12 @@
 <concept id="passage-l20-npo">
     
     <title>Near-Package Optics</title>
-    <shortdesc>The Passage L20 NPO configuration deploys directly on the
+    <shortdesc>The <keyword keyref="lm-passage-l20"/> NPO configuration deploys directly on the
         host PCB adjacent to the ASIC, delivering high-bandwidth optical
         connectivity without modifying the chip package.</shortdesc>
     
     <conbody>
-        <p>Near-Package Optics (NPO) places the L20 module on the PCB or a
+        <p>Near-Package Optics (NPO) places the <keyword keyref="lm-passage-l20"/> module on the PCB or a
             mezzanine board in close proximity to the host ASIC. This shortens
             electrical trace lengths between the SerDes and the optical engine,
             reducing power consumption and improving signal integrity compared
@@ -22,7 +22,7 @@
         
         <section>
             <title>BiDi advantage in NPO deployments</title>
-            <p>The L20's bidirectional optical links transmit and receive on a
+            <p>The <keyword keyref="lm-passage-l20"/>'s bidirectional optical links transmit and receive on a
                 single fiber per lane using Corning CPO Flexconnect. With 32 data
                 fibers supporting 212.5 Gbps PAM4 per lane, the NPO configuration
                 delivers 6.4 Tbps in each direction while halving the fiber

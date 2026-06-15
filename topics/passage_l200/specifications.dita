@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="l200-specifications" outputclass="three_columns">
+  <title>Technical Specifications</title>
+  <shortdesc>Complete optical, integration, and performance specifications for
+    <keyword keyref="lm-passage-l200"/> and <keyword keyref="lm-passage-l200"/>X.</shortdesc>
+
+  <body>
+
+    <section id="specs-optical">
+      <title>Optical</title>
+      <ul>
+        <li>
+          <p><b>Bandwidth</b></p>
+          <ul>
+            <li>32 Tbps optical I/O (<keyword keyref="lm-passage-l200"/>)</li>
+            <li>64 Tbps optical I/O (<keyword keyref="lm-passage-l200"/>X)</li>
+            <li>200+ Tbps total I/O per chip</li>
+          </ul>
+        </li>
+        <li>
+          <p><b>Modulation</b></p>
+          <ul>
+            <li>PAM4 at 56G and 112G</li>
+          </ul>
+        </li>
+        <li>
+          <p><b>Energy Efficiency</b></p>
+          <ul>
+            <li>&lt;5 pJ/bit (optical)</li>
+          </ul>
+        </li>
+        <li>
+          <p><b>Reach</b></p>
+          <ul>
+            <li>10m to 2km (DR/FR direct drive)</li>
+          </ul>
+        </li>
+        <li>
+          <p><b>Topology</b></p>
+          <ul>
+            <li><keyword keyref="lm-edgeless-io"/> area-array</li>
+          </ul>
+        </li>
+        <li>
+          <p><b>Serviceability</b></p>
+          <ul>
+            <li>Detachable fiber connectors</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section id="specs-integration">
+      <title>Integration</title>
+      <ul>
+        <li>
+          <p><b>Architecture</b></p>
+          <ul>
+            <li>3D vertical integration</li>
+            <li>Chip-on-Wafer (CoW) bonding</li>
+            <li>Photonic IC (PIC) stacked beneath electronic IC (EIC)</li>
+          </ul>
+        </li>
+        <li>
+          <p><b>I/O Topology</b></p>
+          <ul>
+            <li><keyword keyref="lm-edgeless-io"/> — SerDes and optical interfaces
+              distributed across entire die surface</li>
+            <li>Bandwidth density scales with silicon area, not die perimeter</li>
+          </ul>
+        </li>
+        <li>
+          <p><b>Drive Architecture</b></p>
+          <ul>
+            <li>Linear drive — eliminates DSP latency</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section id="specs-performance">
+      <title>Performance</title>
+      <ul>
+        <li>
+          <p><b>Bandwidth Density</b></p>
+          <ul>
+            <li>5–10x greater than conventional pluggable solutions</li>
+            <li>Scales with die area rather than shoreline perimeter</li>
+          </ul>
+        </li>
+        <li>
+          <p><b>Latency</b></p>
+          <ul>
+            <li>Linear drive architecture — no DSP re-timing overhead</li>
+          </ul>
+        </li>
+        <li>
+          <p><b>Power</b></p>
+          <ul>
+            <li>&lt;5 pJ/bit optical energy efficiency</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+  </body>
+</topic>

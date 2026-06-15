@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+    <title>Lightmatter Common Keys</title>
+    
+    <!-- ============================================================
+       BRAND NAMES — plain (no trademark symbol)
+       ============================================================ -->
+    <keydef keys="lm-lightmatter">
+        <topicmeta>
+            <keywords>
+                <keyword>Lightmatter</keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+    
+    <keydef keys="lm-idiom">
+        <topicmeta>
+            <keywords>
+                <keyword>Idiom</keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+    
+    <keydef keys="lm-guide">
+        <topicmeta>
+            <keywords>
+                <keyword>Guide</keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+    
+    <keydef keys="lm-passage">
+        <topicmeta>
+            <keywords>
+                <keyword>Passage</keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+    
+    <keydef keys="lm-envise">
+        <topicmeta>
+            <keywords>
+                <keyword>Envise</keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+    
+    <keydef keys="lm-edgeless-io">
+        <topicmeta>
+            <keywords>
+                <keyword>Edgeless I/O</keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+    
+    <keydef keys="lm-eclick">
+        <topicmeta>
+            <keywords>
+                <keyword>eClick</keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+    
+    <keydef keys="lm-vclick">
+        <topicmeta>
+            <keywords>
+                <keyword>vClick</keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+    
+    <keydef keys="lm-giant-leap">
+        <topicmeta>
+            <keywords>
+                <keyword>A Giant Leap</keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+    
+    <keydef keys="lm-passagelink">
+        <topicmeta>
+            <keywords>
+                <keyword>PassageLink</keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+    
+    <keydef keys="lm-vlsp">
+        <topicmeta>
+            <keywords>
+                <keyword>VLSP</keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+    
+    <!-- ============================================================
+       BRAND NAMES — with trademark element (tmtype="tm")
+       Use these on first use per topic or per document
+       ============================================================ -->
+    <keydef keys="lm-lightmatter-tm">
+        <topicmeta>
+            <keywords>
+                <keyword><tm tmtype="tm">Lightmatter</tm></keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+    
+    <keydef keys="lm-idiom-tm">
+        <topicmeta>
+            <keywords>
+                <keyword><tm tmtype="tm">Idiom</tm></keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+    
+    <keydef keys="lm-guide-tm">
+        <topicmeta>
+            <keywords>
+                <keyword><tm tmtype="tm">Guide</tm></keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+    
+    <keydef keys="lm-passage-tm">
+        <topicmeta>
+            <keywords>
+                <keyword><tm tmtype="tm">Passage</tm></keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+    
+    <keydef keys="lm-envise-tm">
+        <topicmeta>
+            <keywords>
+                <keyword><tm tmtype="tm">Envise</tm></keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+    
+    <keydef keys="lm-edgeless-io-tm">
+        <topicmeta>
+            <keywords>
+                <keyword><tm tmtype="tm">Edgeless I/O</tm></keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+    
+    <keydef keys="lm-eclick-tm">
+        <topicmeta>
+            <keywords>
+                <keyword><tm tmtype="tm">eClick</tm></keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+    
+    <keydef keys="lm-vclick-tm">
+        <topicmeta>
+            <keywords>
+                <keyword><tm tmtype="tm">vClick</tm></keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+    
+    <keydef keys="lm-giant-leap-tm">
+        <topicmeta>
+            <keywords>
+                <keyword><tm tmtype="tm">A Giant Leap</tm></keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+    
+    <keydef keys="lm-passagelink-tm">
+        <topicmeta>
+            <keywords>
+                <keyword><tm tmtype="tm">PassageLink</tm></keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+    
+    <keydef keys="lm-vlsp-tm">
+        <topicmeta>
+            <keywords>
+                <keyword><tm tmtype="tm">VLSP</tm></keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+    
+    <!-- ============================================================
+       PRODUCT MODEL VARIABLES - with trademark element (tmtype="tm")
+       Use these on first use per topic or per document
+       ============================================================ -->
+    <keydef keys="lm-passage-l20-tm">
+        <topicmeta>
+            <keywords>
+                <keyword><tm tmtype="tm">Passage</tm> L20</keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+    
+    <keydef keys="lm-passage-l200-tm">
+        <topicmeta>
+            <keywords>
+                <keyword><tm tmtype="tm">Passage</tm> L200</keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+    
+    <!-- ============================================================
+       PRODUCT MODEL VARIABLES - with no trademark element
+       ============================================================ -->
+    <keydef keys="lm-passage-l20">
+        <topicmeta>
+            <keywords>
+                <keyword>Passage L20</keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>
+    
+    <keydef keys="lm-passage-l200">
+        <topicmeta>
+            <keywords>
+                <keyword>Passage L200</keyword>
+            </keywords>
+        </topicmeta>
+    </keydef>    
+</map>

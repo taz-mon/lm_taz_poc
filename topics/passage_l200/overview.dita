@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="l200-overview">
+  <title><keyword keyref="lm-passage-l200-tm"/></title>
+  <shortdesc>First <keyword keyref="lm-edgeless-io-tm"/> 3D Co-Packaged Optics — eliminating
+    the shoreline bottleneck to deliver 32–64 Tbps of optical I/O per chip.</shortdesc>
+
+  <body>
+
+    <section id="hero-metrics">
+      <image href="images/lm_passage_l200.png" placement="break"
+        alt="Passage L200 3D co-packaged optics module">
+        <alt><keyword keyref="lm-passage-l200"/> 3D co-packaged optics module</alt>
+      </image>
+
+      <table frame="all" rowsep="1" colsep="1">
+        <tgroup cols="4">
+          <colspec colname="c1" colwidth="1*"/>
+          <colspec colname="c2" colwidth="1*"/>
+          <colspec colname="c3" colwidth="1*"/>
+          <colspec colname="c4" colwidth="1*"/>
+          <thead>
+            <row>
+              <entry>Bandwidth</entry>
+              <entry>Total I/O</entry>
+              <entry>Density</entry>
+              <entry>Latency</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>32–64 Tbps Optical I/O</entry>
+              <entry>200+ Tbps / Chip</entry>
+              <entry>10x vs Pluggables</entry>
+              <entry>Linear Drive Architecture</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+
+    <section id="challenge">
+      <title>Breaking the Shoreline Constraint</title>
+      <sectiondiv>
+        <p><b>The Challenge</b></p>
+        <p>Conventional chip I/O is confined to the die edges — what the industry calls the
+          shoreline. As die area scales with the square of the radius, perimeter scales only
+          linearly, creating a bandwidth bottleneck. Chips exhaust edge space long before they
+          exhaust compute capability.</p>
+      </sectiondiv>
+      <sectiondiv>
+        <p><b><keyword keyref="lm-passage-l200"/> Implementation</b></p>
+        <p><keyword keyref="lm-passage-l200-tm"/> removes this constraint by vertically integrating
+          the photonic IC (PIC) beneath the electronic IC (EIC). This places SerDes and optical
+          interfaces across the entire die surface, enabling bandwidth density that scales with
+          silicon area rather than die perimeter.</p>
+      </sectiondiv>
+    </section>
+
+  </body>
+</topic>

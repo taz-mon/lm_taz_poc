@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
-<map>
-    <title>passage-l200</title>
-</map>
+<!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
+<bookmap>
+    <booktitle>
+        <mainbooktitle>Passage L200 Specifications</mainbooktitle>
+    </booktitle>
+    
+    <bookmeta>
+        <bookrights>
+            <copyrfirst><year>2026</year></copyrfirst>
+            <bookowner><organization>Lightmatter, Inc.</organization></bookowner>
+        </bookrights>
+    </bookmeta>
+    
+    <frontmatter>
+        <mapref href="../common/global_variables.ditamap" format="ditamap" processing-role="resource-only"/>
+    </frontmatter>
+    
+    <chapter href="../topics/passage_l200/overview.dita"/>
+    <chapter href="../topics/passage_l200/specifications.dita"/>
+    <chapter href="../topics/passage_l200/variants.dita"/>
+    
+</bookmap>
