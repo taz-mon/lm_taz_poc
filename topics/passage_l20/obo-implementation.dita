@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="passage-l20-obo">
+    
+    <title>On-Board Optics</title>
+    <shortdesc>The Passage L20 OBO configuration uses a retimer to extend
+        placement flexibility on the host PCB, enabling optimized board layout
+        for thermal management and signal integrity in longer-reach
+        applications.</shortdesc>
+    
+    <conbody>
+        <p>On-Board Optics (OBO) addresses deployments where the L20 module
+            cannot be placed immediately adjacent to the host ASIC due to board
+            layout constraints, thermal zones, or mechanical requirements. A
+            retimer bridges the electrical path between the ASIC SerDes and the
+            L20, extending the allowable distance between the two without
+            degrading signal integrity.</p>
+        
+        <p>While the NPO configuration eliminates the retimer entirely, the
+            OBO configuration trades that latency saving for significantly greater
+            placement flexibility. This makes OBO the preferred choice for board
+            designs where thermal management, power delivery, or mechanical
+            constraints make direct ASIC proximity impractical.</p>
+        
+        <section>
+            <title>Board layout benefits</title>
+            <p>By decoupling the L20 placement from the ASIC location, the OBO
+                configuration allows system designers to optimize the board for
+                airflow, power distribution, and mechanical constraints
+                independently of optical module placement. This flexibility is
+                particularly valuable in multi-ASIC designs where competing thermal
+                and signal integrity requirements must be balanced across a
+                complex PCB.</p>
+        </section>
+        
+        <section>
+            <title>Bandwidth and fiber consistency</title>
+            <p>The OBO configuration delivers identical optical bandwidth to the
+                NPO configuration — 6.4 Tbps per direction across 32 data fibers
+                at 212.5 Gbps PAM4 per lane. The BiDi single-fiber architecture
+                and Corning CPO Flexconnect interface are consistent across both
+                form factors, allowing system architects to select NPO or OBO
+                based on board layout requirements without any change to the
+                optical infrastructure or fiber plant.</p>
+        </section>
+    </conbody>
+    
+</concept>

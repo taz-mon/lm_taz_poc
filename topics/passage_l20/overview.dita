@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="passage-l20-overview">
+    
+    <title>Passage L20</title>
+    <shortdesc>The Passage L20 is the industry's first bidirectional-enabled
+        high-density near-package and on-board optics solution, delivering 6.4 Tbps
+        of optical bandwidth per direction for next-generation AI infrastructure.</shortdesc>
+    
+    <conbody>
+        <p>Switch and XPU bandwidths are scaling faster than electrical signaling
+            can follow. As AI clusters grow in scale and radix, the demand for
+            high-bandwidth, low-latency optical interconnects has moved from the
+            faceplate to the board itself. Pluggable optics cannot solve this —
+            they are bottlenecked at the panel, consume excessive power, and
+            introduce retimer latency that degrades system performance.</p>
+        
+        <p>The Passage L20 addresses this directly. Powered by Lightmatter's
+            Passage photonic engine, the L20 brings near-package optics (NPO) and
+            on-board optics (OBO) to production-ready form factors, placing optical
+            modules in close proximity to the host ASIC. The result is shorter
+            electrical trace lengths, lower power consumption, and optical bandwidth
+            that scales with deployment needs.</p>
+        
+        <p>The L20 is the first solution in its class to support bidirectional
+            (BiDi) optical links — transmitting and receiving on a single fiber per
+            lane. This halves fiber count requirements while maintaining full
+            6.4 Tbps per-direction bandwidth, making it the highest-density
+            interconnect available for AI switching and accelerator fabrics.</p>
+    </conbody>
+    
+</concept>

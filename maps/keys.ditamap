@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map id="lm-keys">
+    <keydef keys="product-name">
+        <topicmeta><keywords><keyword>Passage L20</keyword></keywords></topicmeta>
+    </keydef>
+    <keydef keys="product-subtitle">
+        <topicmeta><keywords><keyword>Scalable BiDi Optical Interconnect</keyword></keywords></topicmeta>
+    </keydef>
+    <keydef keys="company-name">
+        <topicmeta><keywords><keyword>Lightmatter</keyword></keywords></topicmeta>
+    </keydef>
+    <keydef keys="doc-type">
+        <topicmeta><keywords><keyword>Technical Brief</keyword></keywords></topicmeta>
+    </keydef>
+    <keydef keys="product-family">
+        <topicmeta><keywords><keyword>Passage™ Photonic Interconnect</keyword></keywords></topicmeta>
+    </keydef>
+    <keydef keys="contact-sales">
+        <topicmeta><keywords><keyword>lightmatter.co/contact-us</keyword></keywords></topicmeta>
+    </keydef>
+</map>

@@ -18,10 +18,11 @@
   background-position: 0.5in 0.5in;
   background-repeat: no-repeat;
   background-size: 2in 0.5in;
-  @top-left   { content: none; }
-  @top-right  { content: none; }
-  @bottom-left   { content: none; border: none; }
-  @bottom-center { content: none; border: none; }
+  @top-left        { content: none; }
+  @top-right       { content: none; }
+  @bottom-left     { content: none; border: none; }
+  @bottom-center   { content: none; border: none; }
+  @bottom-right    { content: none; border: none; }
   @bottom-right-corner { content: none; background-image: none; }
 }
 
@@ -35,6 +36,7 @@
     vertical-align: top;
     border-top: 0.5pt solid #DDDDDD;
     padding-top: 4pt;
+    padding-right: 12pt;
   }
 
   @bottom-center {
@@ -45,6 +47,10 @@
     padding-top: 4pt;
   }
 
+  @bottom-right {
+    content: " ";
+    border-top: 0.5pt solid #DDDDDD;
+  }
   @bottom-right-corner {
     content: " ";
     background-image: url("lightmatter@logotyp.us.svg");

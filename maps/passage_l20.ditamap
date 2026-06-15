@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
+<bookmap id="passage-l20-technical-brief">
+
+  <!-- ============================================================
+       BOOK METADATA (drives cover page via DCPP)
+       ============================================================ -->
+  <booktitle>
+    <mainbooktitle>Passage L20</mainbooktitle>
+    <booktitlealt>Scalable BiDi Optical Interconnect</booktitlealt>
+  </booktitle>
+
+  <bookmeta>
+    <bookid>
+      <bookpartno>LM-TB-L20-001</bookpartno>
+      <edition>1.0</edition>
+    </bookid>
+    <bookrights>
+      <copyrfirst><year>2026</year></copyrfirst>
+      <bookowner><organization>Lightmatter, Inc.</organization></bookowner>
+    </bookrights>
+  </bookmeta>
+
+  <!-- ============================================================
+       FRONT MATTER
+       ============================================================ -->
+  <frontmatter>
+  </frontmatter>
+
+  <!-- ============================================================
+       CHAPTERS (mirrors nForce2 technical brief structure)
+       ============================================================ -->
+  <chapter href="../topics/passage_l20/overview.dita"/>
+  <chapter href="../topics/passage_l20/the-challenge.dita"/>
+  <chapter href="../topics/passage_l20/npo-implementation.dita"/>
+  <chapter href="../topics/passage_l20/obo-implementation.dita"/>
+  <chapter href="../topics/passage_l20/specifications.dita"/>
+
+  <!-- ============================================================
+       BACK MATTER
+       ============================================================ -->
+  <backmatter>
+    <booklists>
+      <indexlist/>
+    </booklists>
+  </backmatter>
+
+</bookmap>

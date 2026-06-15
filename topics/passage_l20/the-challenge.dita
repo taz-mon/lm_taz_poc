@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="passage-l20-challenge">
+    
+    <title>The Interconnect Challenge</title>
+    <shortdesc>Conventional pluggable optics and electrical signaling cannot
+        keep pace with the bandwidth demands of next-generation AI switches
+        and accelerators.</shortdesc>
+    
+    <conbody>
+        <p>AI infrastructure is scaling rapidly in both compute density and
+            network radix. Each new generation of XPUs and switch ASICs demands
+            significantly more I/O bandwidth — but the electrical and optical
+            technologies that carry that bandwidth are struggling to keep up.</p>
+        
+        <section>
+            <title>Electrical signaling limits</title>
+            <p>Higher radix designs require longer PCB traces between the ASIC
+                and the panel. As trace lengths increase, signal integrity degrades,
+                SerDes power consumption rises, and the practical bandwidth per lane
+                decreases. Electrical signaling is approaching its physical limits
+                for high-radix, high-bandwidth applications.</p>
+        </section>
+        
+        <section>
+            <title>Pluggable optics limits</title>
+            <p>Pluggable transceivers (OSFP, QSFP-DD) are constrained by the
+                faceplate. Panel real estate is shared with power delivery and
+                cooling infrastructure, placing a hard ceiling on total port count.
+                Retimers required to bridge the electrical gap between the ASIC and
+                the pluggable add latency and consume additional power. A single
+                OSFP module occupies 88% more volume than an equivalent L20
+                module.</p>
+        </section>
+        
+        <section>
+            <title>The near-package opportunity</title>
+            <p>Moving the optical engine off the faceplate and onto the board —
+                in close proximity to the ASIC — eliminates the long trace penalty,
+                removes the retimer from the critical path, and frees panel space
+                for power and cooling. Near-package and on-board optics represent
+                the next architectural step for AI networking infrastructure.</p>
+        </section>
+    </conbody>
+    
+</concept>

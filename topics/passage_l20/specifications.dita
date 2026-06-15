@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="passage-l20-specifications">
+    
+    <title>Technical Specifications</title>
+    <shortdesc>Key electrical, optical, and mechanical specifications for
+        the Passage L20 near-package and on-board optics module.</shortdesc>
+    
+    <refbody>
+        <simpletable relcolwidth="1* 2*">
+            <sthead>
+                <stentry>Parameter</stentry>
+                <stentry>Value</stentry>
+            </sthead>
+            <strow>
+                <stentry>Optical bandwidth</stentry>
+                <stentry>6.4 Tbps per direction</stentry>
+            </strow>
+            <strow>
+                <stentry>SerDes line rate</stentry>
+                <stentry>212.5 Gbps PAM4</stentry>
+            </strow>
+            <strow>
+                <stentry>Data fibers</stentry>
+                <stentry>32 (Corning CPO Flexconnect)</stentry>
+            </strow>
+            <strow>
+                <stentry>Optical link type</stentry>
+                <stentry>Bidirectional (BiDi) — 1 fiber Tx/Rx</stentry>
+            </strow>
+            <strow>
+                <stentry>Form factor</stentry>
+                <stentry>1827-ball BGA, reflow compatible</stentry>
+            </strow>
+            <strow>
+                <stentry>Dimensions</stentry>
+                <stentry>37.5 mm x 26.4 mm</stentry>
+            </strow>
+            <strow>
+                <stentry>Power efficiency</stentry>
+                <stentry>5 pJ/bit</stentry>
+            </strow>
+            <strow>
+                <stentry>Volume vs OSFP</stentry>
+                <stentry>88% smaller by volume</stentry>
+            </strow>
+            <strow>
+                <stentry>Cooling</stentry>
+                <stentry>Cold plate, ASHRAE A2 compliant</stentry>
+            </strow>
+            <strow>
+                <stentry>Form factor options</stentry>
+                <stentry>Near-Package Optics (NPO), On-Board Optics (OBO)</stentry>
+            </strow>
+        </simpletable>
+        
+        <section>
+            <title>Ordering information</title>
+            <p>The Passage L20 is available for design partnership engagements.
+                Contact Lightmatter sales to discuss NPO and OBO configuration
+                options, qualification timelines, and integration support.</p>
+            <p>Contact: <xref href="https://lightmatter.co/contact-us"
+                    format="html" scope="external">lightmatter.co/contact-us</xref></p>
+        </section>
+    </refbody>
+    
+</reference>
