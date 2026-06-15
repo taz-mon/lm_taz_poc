@@ -1,0 +1,58 @@
+name: Publish Lightmatter PDFs
+
+# Manual trigger only — run from the terminal with:
+#   gh workflow run publish.yml
+on:
+  workflow_dispatch:
+
+jobs:
+  build-pdfs:
+    name: Build PDFs with Oxygen DCPP
+    runs-on: ubuntu-latest
+
+    steps:
+      # ── 1. Checkout ──────────────────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ── 2. Build passage_l20.pdf ──────────────────────────────────────────
+      - name: Build passage_l20.pdf
+        uses: oxygenxml/oxygen-publishing-engine-action@v1
+        with:
+          credentials: ${{ secrets.OXYGEN_LICENSE_KEY }}
+          input: maps/passage_l20.ditamap
+          transtype: pdf-css-html
+          args: >
+            -Dpdf.publishing.template=templates/lightmatter/lightmatter.opt
+            -Doutput.dir=out/l20
+          output-directory: out/l20
+
+      # ── 3. Build passage_l200.pdf ─────────────────────────────────────────
+      - name: Build passage_l200.pdf
+        uses: oxygenxml/oxygen-publishing-engine-action@v1
+        with:
+          credentials: ${{ secrets.OXYGEN_LICENSE_KEY }}
+          input: maps/passage_l200.ditamap
+          transtype: pdf-css-html
+          args: >
+            -Dpdf.publishing.template=templates/lightmatter/lightmatter.opt
+            -Doutput.dir=out/l200
+          output-directory: out/l200
+
+      # ── 4. Upload passage_l20.pdf as a workflow artifact ──────────────────
+      - name: Upload passage_l20.pdf
+        uses: actions/upload-artifact@v4
+        with:
+          name: passage_l20
+          path: out/l20/*.pdf
+          if-no-files-found: error
+          retention-days: 30
+
+      # ── 5. Upload passage_l200.pdf as a workflow artifact ─────────────────
+      - name: Upload passage_l200.pdf
+        uses: actions/upload-artifact@v4
+        with:
+          name: passage_l200
+          path: out/l200/*.pdf
+          if-no-files-found: error
+          retention-days: 30
