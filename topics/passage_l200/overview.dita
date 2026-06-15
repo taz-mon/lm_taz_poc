@@ -2,8 +2,8 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="l200-overview">
   <title><keyword keyref="lm-passage-l200-tm"/></title>
-  <shortdesc>First <keyword keyref="lm-edgeless-io-tm"/> 3D Co-Packaged Optics — eliminating
-    the shoreline bottleneck to deliver 32–64 Tbps of optical I/O per chip.</shortdesc>
+  <shortdesc>The first <keyword keyref="lm-edgeless-io-tm"/> 3D Co-Packaged Optics,  eliminating the
+    shoreline bottleneck to deliver 32–64 Tbps of optical I/O per chip.</shortdesc>
 
   <body>
 
@@ -43,7 +43,7 @@
       <title>Breaking the Shoreline Constraint</title>
       <sectiondiv>
         <p><b>The Challenge</b></p>
-        <p>Conventional chip I/O is confined to the die edges — what the industry calls the
+        <p>Conventional chip I/O is confined to the die edges, known in the industry as the
           shoreline. As die area scales with the square of the radius, perimeter scales only
           linearly, creating a bandwidth bottleneck. Chips exhaust edge space long before they
           exhaust compute capability.</p>

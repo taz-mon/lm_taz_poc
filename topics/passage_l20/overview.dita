@@ -8,11 +8,10 @@
         bandwidth per direction for next-generation AI infrastructure.</shortdesc>
     
     <conbody>
-        <p>Switch and XPU bandwidths are scaling faster than electrical signaling
-            can follow. As AI clusters grow in scale and radix, the demand for
-            high-bandwidth, low-latency optical interconnects has moved from the
-            faceplate to the board itself. Pluggable optics cannot solve this —
-            they are bottlenecked at the panel, consume excessive power, and
+        <p>Switch and XPU bandwidths are scaling faster than electrical signaling can follow. As AI
+            clusters grow in scale and radix, the demand for high-bandwidth, low-latency optical
+            interconnects has moved from the faceplate to the board itself. Pluggable optics cannot
+            solve this because they contain bottlenecks at the panel, consume excessive power, and
             introduce retimer latency that degrades system performance.</p>
         
         <p>The <keyword keyref="lm-passage-l20"/> addresses this directly. Powered by Lightmatter's
@@ -22,11 +21,11 @@
             electrical trace lengths, lower power consumption, and optical bandwidth
             that scales with deployment needs.</p>
         
-        <p>The <keyword keyref="lm-passage-l20"/> is the first solution in its class to support bidirectional
-            (BiDi) optical links — transmitting and receiving on a single fiber per
-            lane. This halves fiber count requirements while maintaining full
-            6.4 Tbps per-direction bandwidth, making it the highest-density
-            interconnect available for AI switching and accelerator fabrics.</p>
+        <p>The <keyword keyref="lm-passage-l20"/> is the first solution in its class to support
+            bidirectional (BiDi) optical links to transmit and receive on a single fiber per lane.
+            This halves fiber count requirements while maintaining full 6.4 Tbps per-direction
+            bandwidth, making it the highest-density interconnect available for AI switching and
+            accelerator fabrics.</p>
     </conbody>
     
 </concept>

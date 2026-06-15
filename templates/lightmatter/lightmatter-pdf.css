@@ -79,6 +79,7 @@
 
 *[class ~= "bookmap/mainbooktitle"] {
   display: block;
+  width: 100%;
   font-family: "Inter", sans-serif;
   font-size: 28pt;
   font-weight: 700;
@@ -307,6 +308,38 @@ body {
 }
 
 /* ============================================================
+   SUPPRESS RUNNING HEADERS
+   ============================================================ */
+
+@page :left {
+  @top-left {
+    content: none !important;
+  }
+}
+
+@page :right {
+  @top-right {
+    content: none !important;
+  }
+}
+
+@page chapter:left,
+      chapter:first:left,
+      three_column_page:left {
+  @top-left {
+    content: none !important;
+  }
+}
+
+@page chapter:right,
+      chapter:first:right,
+      three_column_page:right {
+  @top-right {
+    content: none !important;
+  }
+}
+
+/* ============================================================
    SPECIFICATIONS — THREE-COLUMN LAYOUT
    Uses outputclass on topic root + @page rule per Oxygen docs
    ============================================================ */
@@ -318,6 +351,7 @@ body {
 @page three_column_page {
   column-count: 3;
   column-gap: 0.25in;
+  margin: 1in 1in 0.75in 1in;
 }
 
 /* Topic title spans all three columns */
@@ -341,4 +375,43 @@ body {
   font-size: 9pt;
   line-height: 1.3;
   margin-bottom: 2pt;
+}
+
+@page three_column_page {
+  column-count: 3;
+  column-gap: 0.25in;
+  margin: 1in 1in 0.75in 1in;
+
+  @bottom-left {
+    content: oxy_xpath('//*[contains(@class, "bookmap/mainbooktitle")]/text()')
+             "\A "
+             oxy_xpath("format-date(current-date(), '[MNn] [Y]')");
+    white-space: pre;
+    color: #FE2D2D;
+    vertical-align: top;
+    border-top: 0.5pt solid #DDDDDD;
+    padding-top: 4pt;
+    padding-right: 12pt;
+  }
+
+  @bottom-center {
+    content: counter(page) !important;
+    color: #6B6B6B;
+    vertical-align: top;
+    border-top: 0.5pt solid #DDDDDD;
+    padding-top: 4pt;
+  }
+
+  @bottom-right {
+    content: " ";
+    border-top: 0.5pt solid #DDDDDD;
+  }
+
+  @bottom-right-corner {
+    content: " ";
+    background-image: url("lightmatter@logotyp.us.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 90%;
+  }
 }

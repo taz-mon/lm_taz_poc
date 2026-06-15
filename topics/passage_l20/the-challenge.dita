@@ -8,10 +8,10 @@
         and accelerators.</shortdesc>
     
     <conbody>
-        <p>AI infrastructure is scaling rapidly in both compute density and
-            network radix. Each new generation of XPUs and switch ASICs demands
-            significantly more I/O bandwidth — but the electrical and optical
-            technologies that carry that bandwidth are struggling to keep up.</p>
+        <p>AI infrastructure is scaling rapidly in both compute density and network radix. Each new
+            generation of XPUs and switch ASICs demands significantly more I/O bandwidth, but the
+            electrical and optical technologies that carry that bandwidth are struggling to keep
+            up.</p>
         
         <section>
             <title>Electrical signaling limits</title>
@@ -35,11 +35,10 @@
         
         <section>
             <title>The near-package opportunity</title>
-            <p>Moving the optical engine off the faceplate and onto the board —
-                in close proximity to the ASIC — eliminates the long trace penalty,
-                removes the retimer from the critical path, and frees panel space
-                for power and cooling. Near-package and on-board optics represent
-                the next architectural step for AI networking infrastructure.</p>
+            <p>Moving the optical engine off the faceplate and onto the board in close proximity to
+                the ASIC eliminates the long trace penalty, removes the retimer from the critical
+                path, and frees panel space for power and cooling. Near-package and on-board optics
+                represent the next architectural step for AI networking infrastructure.</p>
         </section>
     </conbody>
     
