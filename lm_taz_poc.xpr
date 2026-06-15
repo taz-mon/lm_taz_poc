@@ -113,7 +113,7 @@
                                             <String>/home/toma2z/projects/lm_taz_poc/templates/lightmatter/</String>
                                         </field>
                                         <field name="descriptorRelativePath">
-                                            <String>lightmatter-l200.opt</String>
+                                            <String>lightmatter.opt</String>
                                         </field>
                                         <field name="isCustomTemplate">
                                             <Boolean>true</Boolean>
