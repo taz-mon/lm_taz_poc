@@ -15,7 +15,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # ── 2. Set up Java (Oxygen Publishing Engine requires JDK 17+) ──────────
+      # ── 2. Set up Java ─────────────────────────────────────────────────────
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
@@ -27,32 +27,32 @@ jobs:
         run: |
           curl -L \
             "https://www.oxygenxml.com/InstData/PublishingEngine/oxygen-publishing-engine.zip" \
-            -o oxygen-publishing-engine.zip
-          unzip -q oxygen-publishing-engine.zip
+            -o ope.zip
+          unzip -q ope.zip
           echo "OPE_HOME=$(pwd)/oxygen-publishing-engine" >> $GITHUB_ENV
 
-      # ── 4. License the Publishing Engine ─────────────────────────────────────
+      # ── 4. Write license key file ─────────────────────────────────────────
       - name: License Oxygen Publishing Engine
         env:
           OXYGEN_LICENSE_KEY: ${{ secrets.OXYGEN_LICENSE_KEY }}
         run: |
-          "$OPE_HOME/licensekey.sh" "$OXYGEN_LICENSE_KEY"
+          echo "$OXYGEN_LICENSE_KEY" > "$OPE_HOME/licensekey.txt"
 
       # ── 5. Build passage_l20.pdf ──────────────────────────────────────────────
       - name: Build passage_l20.pdf
         run: |
-          "$OPE_HOME/dita" \
+          "$OPE_HOME/bin/dita" \
             --input="$(pwd)/maps/passage_l20.ditamap" \
-            --format=pdf-css-html \
+            --format=pdf-css-html5 \
             --output="$(pwd)/out/l20" \
             -Dpdf.publishing.template="$(pwd)/templates/lightmatter/lightmatter.opt"
 
       # ── 6. Build passage_l200.pdf ─────────────────────────────────────────────
       - name: Build passage_l200.pdf
         run: |
-          "$OPE_HOME/dita" \
+          "$OPE_HOME/bin/dita" \
             --input="$(pwd)/maps/passage_l200.ditamap" \
-            --format=pdf-css-html \
+            --format=pdf-css-html5 \
             --output="$(pwd)/out/l200" \
             -Dpdf.publishing.template="$(pwd)/templates/lightmatter/lightmatter.opt"
 
