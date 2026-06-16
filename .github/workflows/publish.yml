@@ -1,13 +1,13 @@
 name: Publish Lightmatter PDFs
 
-# Manual trigger only — run from the terminal with:
+# Manual trigger only — run from terminal with:
 #   gh workflow run publish.yml
 on:
   workflow_dispatch:
 
 jobs:
   build-pdfs:
-    name: Build PDFs with Oxygen DCPP
+    name: Build PDFs with Oxygen Publishing Engine
     runs-on: ubuntu-latest
 
     steps:
@@ -15,31 +15,48 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # ── 2. Build passage_l20.pdf ──────────────────────────────────────────
+      # ── 2. Set up Java (Oxygen Publishing Engine requires JDK 17+) ──────────
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      # ── 3. Download and unzip Oxygen Publishing Engine ───────────────────────
+      - name: Download Oxygen Publishing Engine
+        run: |
+          curl -L \
+            "https://www.oxygenxml.com/InstData/PublishingEngine/oxygen-publishing-engine.zip" \
+            -o oxygen-publishing-engine.zip
+          unzip -q oxygen-publishing-engine.zip
+          echo "OPE_HOME=$(pwd)/oxygen-publishing-engine" >> $GITHUB_ENV
+
+      # ── 4. License the Publishing Engine ─────────────────────────────────────
+      - name: License Oxygen Publishing Engine
+        env:
+          OXYGEN_LICENSE_KEY: ${{ secrets.OXYGEN_LICENSE_KEY }}
+        run: |
+          "$OPE_HOME/licensekey.sh" "$OXYGEN_LICENSE_KEY"
+
+      # ── 5. Build passage_l20.pdf ──────────────────────────────────────────────
       - name: Build passage_l20.pdf
-        uses: oxygenxml/oxygen-publishing-engine-action@v1
-        with:
-          credentials: ${{ secrets.OXYGEN_LICENSE_KEY }}
-          input: maps/passage_l20.ditamap
-          transtype: pdf-css-html
-          args: >
-            -Dpdf.publishing.template=templates/lightmatter/lightmatter.opt
-            -Doutput.dir=out/l20
-          output-directory: out/l20
+        run: |
+          "$OPE_HOME/dita" \
+            --input="$(pwd)/maps/passage_l20.ditamap" \
+            --format=pdf-css-html \
+            --output="$(pwd)/out/l20" \
+            -Dpdf.publishing.template="$(pwd)/templates/lightmatter/lightmatter.opt"
 
-      # ── 3. Build passage_l200.pdf ─────────────────────────────────────────
+      # ── 6. Build passage_l200.pdf ─────────────────────────────────────────────
       - name: Build passage_l200.pdf
-        uses: oxygenxml/oxygen-publishing-engine-action@v1
-        with:
-          credentials: ${{ secrets.OXYGEN_LICENSE_KEY }}
-          input: maps/passage_l200.ditamap
-          transtype: pdf-css-html
-          args: >
-            -Dpdf.publishing.template=templates/lightmatter/lightmatter.opt
-            -Doutput.dir=out/l200
-          output-directory: out/l200
+        run: |
+          "$OPE_HOME/dita" \
+            --input="$(pwd)/maps/passage_l200.ditamap" \
+            --format=pdf-css-html \
+            --output="$(pwd)/out/l200" \
+            -Dpdf.publishing.template="$(pwd)/templates/lightmatter/lightmatter.opt"
 
-      # ── 4. Upload passage_l20.pdf as a workflow artifact ──────────────────
+      # ── 7. Upload passage_l20.pdf artifact ───────────────────────────────────
       - name: Upload passage_l20.pdf
         uses: actions/upload-artifact@v4
         with:
@@ -48,7 +65,7 @@ jobs:
           if-no-files-found: error
           retention-days: 30
 
-      # ── 5. Upload passage_l200.pdf as a workflow artifact ─────────────────
+      # ── 8. Upload passage_l200.pdf artifact ──────────────────────────────────
       - name: Upload passage_l200.pdf
         uses: actions/upload-artifact@v4
         with:
