@@ -49,7 +49,7 @@ The project lets you publish both PDFs from the same DITA source set and the sam
 
 This project uses DITA's map/key-reference model and Oxygen's CSS-based publishing pipeline (DCPP). Here's why (for anyone evaluating my structured-authoring choices):
 
-**Single source, two outputs.** Both bookmaps reference the same `common/global_variables.ditamap` through `<mapref>` in `<frontmatter>`, so the trademark string I reference (plain and `-tm` variants) and product name are defined once and used in topics with `<keyword>` references. This approach makes it to easy manage trademarking and for managing product references that appear many times in a topic.
+**Single source, two outputs.** Both bookmaps reference the same `common/global_variables.ditamap` through `<mapref>` in `<frontmatter>`, so the trademark string I reference (plain and `-tm` variants) and product name are defined once and used in topics with `<keyword>` references. This approach makes it easy to manage trademarking and for managing product references that appear many times in a topic.
 
 **Layout as metadata.** The three-column specs layout is triggered by the `<topic outputclass="three_columns">` attribute. For this project you can see it in the `topics/passage_l200/specifications.dita` file. The CSS defines an `@page three_column_page` rule with `column-count: 3`; the DITA source doesn't know or care about columns. This keeps the content model (topic) clean and the layout decision entirely in the presentation layer (css file).
 
